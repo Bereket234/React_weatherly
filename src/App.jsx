@@ -13,7 +13,7 @@ function App() {
   const [data, setData]= useState([])
 
   useEffect(()=>{
-    axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=f8f91469a52f8da248e97d9a088581a7`)
+    axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid={}`)
       .then(response=> {
         const {name}= response.data[0]
         setCity(name)
@@ -24,7 +24,7 @@ function App() {
 
 
   useEffect(()=>{
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${locations.lat}&lon=${locations.lon}&units=metric&appid=f8f91469a52f8da248e97d9a088581a7`)
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${locations.lat}&lon=${locations.lon}&units=metric&appid={}`)
         .then(res => {
           const {temp}= res.data.main
           setTempreture(temp)
